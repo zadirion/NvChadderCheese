@@ -19,3 +19,17 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+
+vim.g.guifont = "JetBrainsMonoNL NF Medium"
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.ruler = true
+vim.g.python3_host_prog = "C:/msys64/mingw64/bin/python3.exe"
+local opts = {noremap = true}
+
+vim.api.nvim_create_autocmd("FileType", { pattern = "rust", 
+    callback = function()
+        vim.api.nvim_buf_set_keymap(0,"n","<F5>",":RustDebuggables<CR>",opts)
+        vim.api.nvim_buf_set_keymap(0,"n","<F9>",":DapToggleBreakpoint<CR>",opts)
+    end})
+	
