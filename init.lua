@@ -24,6 +24,7 @@ vim.g.guifont = "JetBrainsMonoNL NF Medium"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.ruler = true
+vim.opt.colorcolumn="80"
 vim.g.python3_host_prog = "C:/msys64/mingw64/bin/python3.exe"
 local opts = {noremap = true}
 
